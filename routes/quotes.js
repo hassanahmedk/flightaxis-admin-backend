@@ -4,7 +4,7 @@ import {
   getQuotes,
   addQuote,
   deleteQuote,
-} from "../controller/Quotes.js";
+} from "../controller/quotes.js";
 
 const router = express.Router();
 
