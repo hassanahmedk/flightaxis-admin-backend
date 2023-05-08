@@ -13,6 +13,11 @@ import messageRoutes from "./routes/messages.js"
 const app = express();
 
 app.use(cors());
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.urlencoded({extended:true}));
@@ -39,8 +44,11 @@ db.once("open", function () {
 });
 
 
+app.get("/", (req,res)=>{
+    res.send("Working")
+})
 
-app.use('/', loginRoutes);
+app.use('/login', loginRoutes);
 app.use('/flights', flightRoutes);
 app.use('/bookings', bookingRoutes);
 app.use('/quotes', quoteRoutes);
@@ -50,3 +58,5 @@ app.use('/messages', messageRoutes);
 app.listen(port, "0.0.0.0", function(){
     console.log("Server running at 5000");
 });
+
+export default app;

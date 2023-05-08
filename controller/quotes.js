@@ -1,4 +1,4 @@
-import QuoteModel from "../db/Quotes.js";
+import QuoteModel from "../db/quotes.js";
 
 export const getQuotes = (req, res) => {
   QuoteModel.find()
