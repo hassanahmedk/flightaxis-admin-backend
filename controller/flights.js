@@ -12,16 +12,7 @@ export const getFlights = (req, res) => {
 };
 
 export const addFlight = (req, res) => {
-  const newFlight = new FlightModel({
-    airline: req.body.airline,
-    departure_date: req.body.departure_date,
-    leaving_from: req.body.leaving_from,
-    going_to: req.body.going_to,
-    flight_class: req.body.flight_class,
-    adult_fare: req.body.adult_fare,
-    departure_time: req.body.departure_time,
-    infants_fare: req.body.infants_fare,
-  });
+  const newFlight = new FlightModel(req.body);
   newFlight
     .save()
     .then((result) => {

@@ -2,13 +2,59 @@ import mongoose from "mongoose";
 
 const FlightSchema = new mongoose.Schema({
   airline: String,
-  departure_date: String,
   leaving_from: String,
   going_to: String,
-  flight_class: String,
-  adult_fare: String,
-  departure_time: String,
-  infants_fare: String,
+    months_fare:[
+        {
+            month:String,
+            fare:String
+        },
+        {
+            month:String,
+            fare:String
+        },
+        {
+            month:String,
+            fare:String
+        },
+        {
+            month:String,
+            fare:String
+        },
+        {
+            month:String,
+            fare:String
+        },
+        {
+            month:String,
+            fare:String
+        },
+        {
+            month:String,
+            fare:String
+        },{
+            month:String,
+            fare:String
+        }
+        ,{
+            month:String,
+            fare:String
+        }
+        ,{
+            month:String,
+            fare:String
+        }
+        ,{
+            month:String,
+            fare:String
+        }
+        ,{
+            month:String,
+            fare:String
+        }
+        
+    ]
+  
 });
 
 const FlightModel = mongoose.model("Flight", FlightSchema);

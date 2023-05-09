@@ -16,6 +16,7 @@ const QuotesSchema = new mongoose.Schema({
   customer_phone: String,
   total_fare: String,
   submittedOn: Date,
+  side_notes: String,
 });
 
 const QuotesModel = mongoose.model("Quote", QuotesSchema);
