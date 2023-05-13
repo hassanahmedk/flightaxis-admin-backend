@@ -1,6 +1,8 @@
 import FlightModel from "../db/flights.js";
 
-export const getFlights = (req, res) => {
+export const getFlights = async (req, res) => {
+
+  
     FlightModel.find()
     .then((flights)=>{
         res.send(flights);

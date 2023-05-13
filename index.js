@@ -58,6 +58,9 @@ app.use("/bookings", bookingRoutes);
 app.use("/quotes", quoteRoutes);
 app.use("/messages", messageRoutes);
 
+
+// app.post("/findFlight", messageRoutes);
+
 // Starting server
 app.listen(port, "0.0.0.0", function () {
   console.log("Server running at 5000");
