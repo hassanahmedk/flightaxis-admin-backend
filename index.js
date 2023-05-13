@@ -32,6 +32,8 @@ app.use(function (req, res, next) {
   next();
 });
 
+
+// 
 // Connecting database
 const mongodbURL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.${process.env.DB_CLUSTER}.mongodb.net/?retryWrites=true&w=majority&ssl=true`;
 
