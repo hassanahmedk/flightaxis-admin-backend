@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const BookingSchema = new mongoose.Schema({
   airline: String,
-  customer_name: String,
+  name: String,
   leaving_from: String,
   going_to: String,
   trip_type: String,  
