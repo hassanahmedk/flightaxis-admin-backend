@@ -51,6 +51,7 @@ db.once("open", function () {
 // Test route
 app.get("/", (req, res) => {
   res.send({status:200, message:"API is working"});
+   
 });
 
 // Adding routes

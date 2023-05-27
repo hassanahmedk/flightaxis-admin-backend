@@ -8,62 +8,62 @@ const FlightSchema = new mongoose.Schema({
         {
             month:String,
             leaving_fare:String,
-            returning_fare:String
+            
 
         },
         {
             month:String,
             leaving_fare:String,
-            returning_fare:String
+            
         },
         {
             month:String,
             leaving_fare:String,
-            returning_fare:String
+            
         },
         {
             month:String,
             leaving_fare:String,
-            returning_fare:String
+            
         },
         {
             month:String,
             leaving_fare:String,
-            returning_fare:String
+            
         },
         {
             month:String,
             leaving_fare:String,
-            returning_fare:String
+            
         },
         {
             month:String,
             leaving_fare:String,
-            returning_fare:String
+            
         },{
             month:String,
             leaving_fare:String,
-            returning_fare:String
+            
         }
         ,{
             month:String,
             leaving_fare:String,
-            returning_fare:String
+            
         }
         ,{
             month:String,
             leaving_fare:String,
-            returning_fare:String
+            
         }
         ,{
             month:String,
             leaving_fare:String,
-            returning_fare:String
+            
         }
         ,{
             month:String,
             leaving_fare:String,
-            returning_fare:String
+            
         }
         
     ]
