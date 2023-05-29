@@ -31,7 +31,23 @@ app.use(function (req, res, next) {
   );
   next();
 });
+// Authentication middleware
+const authenticateToken = (req, res, next) => {
+  const token = req.headers.authorization;
 
+  if (!token) {
+    return res.status(401).json({ message: 'Authorization token not provided' });
+  }
+
+  jwt.verify(token, 'secretKey', (err, decodedToken) => {
+    if (err) {
+      return res.status(403).json({ message: 'Invalid token' });
+    }
+
+    req.userId = decodedToken.userId;
+    next();
+  });
+};
 
 // 
 // Connecting database
@@ -60,6 +76,13 @@ app.use("/flights", flightRoutes);
 app.use("/bookings", bookingRoutes);
 app.use("/quotes", quoteRoutes);
 app.use("/messages", messageRoutes);
+
+app.get('/', authenticateToken, (req, res) => {
+  res.json({ message: 'Welcome to the Home Page!' });
+});
+
+
+
 
 
 // app.post("/findFlight", messageRoutes);
