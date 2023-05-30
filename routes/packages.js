@@ -6,11 +6,8 @@ import { getPackages, addPackage, editPackage, deletePackage } from "../controll
 const router = express.Router();
 
 
-router.route("/")
+router.route("/:city")
 .get(getPackages)
-.post(addPackage)
-.put(editPackage)
-.delete(deletePackage);
 
  
 export default router;

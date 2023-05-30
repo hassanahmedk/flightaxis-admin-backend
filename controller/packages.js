@@ -12,7 +12,7 @@ export const getPackages = async (req, res) => {
     //     console.log(error);
     //     res.send("An Error occured");
     // })
-    PackageModel.find({going_to: req.body.city})
+    PackageModel.find({going_to: req.params.city})
     .then((packages)=>{
         res.send(packages);
     })
