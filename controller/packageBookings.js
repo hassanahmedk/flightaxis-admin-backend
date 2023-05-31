@@ -1,4 +1,4 @@
-import BookingModel from "../db/packageBookings.js";
+import PackageBookingModel from "../db/packageBookings.js";
 
 export const getPackageBookings = (req, res) => {
   PackageBookingModel.find()
