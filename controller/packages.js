@@ -12,7 +12,7 @@ export const getPackages = async (req, res) => {
     //     console.log(error);
     //     res.send("An Error occured");
     // })
-    if (req.params.city === "all"){
+    if (req.params.package === "all"){
         PackageModel.find()
         .then((packages)=>{
             res.send(packages);
