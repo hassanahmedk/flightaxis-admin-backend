@@ -8,6 +8,7 @@ const router = express.Router();
 
 router.route("/:package")
 .get(getPackages)
+.put(editPackage)
 
  
 export default router;
