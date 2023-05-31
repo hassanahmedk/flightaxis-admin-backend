@@ -10,6 +10,7 @@ import bookingRoutes from "./routes/bookings.js";
 import quoteRoutes from "./routes/quotes.js";
 import messageRoutes from "./routes/messages.js";
 import packageRoutes from "./routes/packages.js";
+import packageBookingRoutes from "./routes/packageBookings.js";
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -78,6 +79,7 @@ app.use("/bookings", bookingRoutes);
 app.use("/quotes", quoteRoutes);
 app.use("/messages", messageRoutes);
 app.use("/packages", packageRoutes);
+app.use("/packageBookings", packageBookingRoutes);
 
 app.get('/', authenticateToken, (req, res) => {
   res.json({ message: 'Welcome to the Home Page!' });

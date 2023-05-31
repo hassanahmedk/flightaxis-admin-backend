@@ -12,14 +12,27 @@ export const getPackages = async (req, res) => {
     //     console.log(error);
     //     res.send("An Error occured");
     // })
-    PackageModel.find({going_to: req.params.city})
-    .then((packages)=>{
-        res.send(packages);
-    })
-    .catch((error)=>{
-        console.log(error);
-        res.send("An Error occured");
-    })
+    if (req.params.city === "all"){
+        PackageModel.find()
+        .then((packages)=>{
+            res.send(packages);
+        })
+        .catch((error)=>{
+            console.log(error);
+            res.send("An Error occured");
+        })
+
+    } else {
+        PackageModel.find({going_to: req.params.city})
+        .then((packages)=>{
+            res.send(packages);
+        })
+        .catch((error)=>{
+            console.log(error);
+            res.send("An Error occured");
+        })
+
+    }
 };
 
 
