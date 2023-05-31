@@ -23,7 +23,7 @@ export const getPackages = async (req, res) => {
         })
 
     } else {
-        PackageModel.find({going_to: req.params.city})
+        PackageModel.find({going_to: req.params.package})
         .then((packages)=>{
             res.send(packages);
         })
@@ -50,7 +50,7 @@ export const addPackage = (req, res) => {
 };
 
 export const editPackage = (req, res) => {
-    PackageModel.findOneAndUpdate({_id:req.body.id}, {...req.body}, {new:true})
+    PackageModel.findOneAndUpdate({_id:req.params.package}, {...req.body}, {new:true})
     .then((result)=>{
         console.log("update func successfull");
         console.log(result);
